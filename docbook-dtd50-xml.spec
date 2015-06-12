@@ -13,6 +13,7 @@ BuildRequires:	rpm-build >= 4.0.2-94
 BuildRequires:	unzip
 Requires(post,preun):	/usr/bin/xmlcatalog
 Requires:	libxml2-progs >= 2.4.17-6
+Requires:	sgml-common >= 0.5
 BuildArch:	noarch
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
