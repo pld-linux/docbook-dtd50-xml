@@ -1,0 +1,15 @@
+Required for daps to detect DocBook 5.0 XML
+--- docbook-5.0/catalog.xml.orig	2008-02-06 15:13:23.000000000 +0100
++++ docbook-5.0/catalog.xml	2021-03-14 20:27:42.789901127 +0100
+@@ -25,6 +25,11 @@
+ 
+ <system systemId="http://docbook.org/xml/5.0/dtd/docbook.dtd" uri="dtd/docbook.dtd"/>
+ 
++<system systemId="http://docbook.org/xml/5.0/rng/docbook.rnc" uri="rng/docbook.rnc"/>
++<system systemId="http://docbook.org/xml/5.0/rng/docbook.rng" uri="rng/docbook.rng"/>
++<system systemId="http://docbook.org/xml/5.0/rng/docbookxi.rnc" uri="rng/docbookxi.rnc"/>
++<system systemId="http://docbook.org/xml/5.0/rng/docbookxi.rng" uri="rng/docbookxi.rng"/>
++
+ <uri name="http://www.oasis-open.org/docbook/xml/5.0/rng/docbook.rng" uri="rng/docbook.rng"/>
+ 
+ <uri name="http://docbook.org/xml/5.0/rng/docbook.rng" uri="rng/docbook.rng"/>

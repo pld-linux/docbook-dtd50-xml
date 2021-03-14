@@ -2,12 +2,13 @@ Summary:	XML DocBook DTD 5.0
 Summary(pl.UTF-8):	XML DocBook DTD 5.0
 Name:		docbook-dtd50-xml
 Version:	5.0
-Release:	1
+Release:	2
 License:	Free
 Group:		Applications/Publishing/XML
-Source0:	http://docbook.org/xml/%{version}/docbook-%{version}.zip
+Source0:	https://docbook.org/xml/%{version}/docbook-%{version}.zip
 # Source0-md5:	2411c19ed4fb141f3fa3d389fae40736
-URL:		http://docbook.org/
+Patch0:		%{name}-catalog.patch
+URL:		https://docbook.org/
 BuildRequires:	libxml2-progs
 BuildRequires:	rpm-build >= 4.0.2-94
 BuildRequires:	unzip
@@ -37,7 +38,7 @@ Ten pakiet zawiera wersję DocBook 5.0 XML.
 
 %prep
 %setup -q -n docbook-5.0
-#chmod -R a+rX *
+%patch0 -p1
 
 %install
 rm -rf $RPM_BUILD_ROOT
@@ -45,13 +46,6 @@ install -d $RPM_BUILD_ROOT%{dtd_path}
 
 cp -p catalog.xml $RPM_BUILD_ROOT%{dtd_path}
 cp -a dtd rng sch xsd $RPM_BUILD_ROOT%{dtd_path}
-
-%if 0
-%xmlcat_add_rewrite \
-	http://docbook.org/xml/%{version} \
-	file://%{dtd_path} \
-	$RPM_BUILD_ROOT%{xmlcat_file}
-%endif
 
 %clean
 rm -rf $RPM_BUILD_ROOT
